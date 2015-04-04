@@ -1,0 +1,13 @@
+couch_db:
+ server: host_name_environment
+ port: 5984
+
+authentication:
+ user: couchAdmin
+ password: couch123
+
+store:
+ file: qa2.sqlite
+
+monitor:
+ heartbeat: 60

@@ -1,0 +1,27 @@
+# Description
+This script will invoke the _stats url to get the couchcb stats and it will insert the result on a sqlite database.
+
+The invocation will be done with the range parameter (_stats?range=<heartbeat>).
+
+THe main algorithm is:
+
+```
+while(1){
+extract stats?range=<heartbeat> 
+sleep <heartbeat>;
+}
+```
+
+
+# Setup
+create a correct sqlite database with before runing it:
+sqlite --init create_database.sql <Name of DB> 
+Then you can point your configuration file to the database <Name of DB>
+
+# How to run:
+perl couchmonitor.pl -conf <conf_file>.yaml
+
+More info about statistics:
+https://wiki.apache.org/couchdb/Runtime_Statistics
+
+http://docs.couchdb.org/en/latest/config/misc.html
